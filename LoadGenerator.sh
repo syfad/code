@@ -3,7 +3,7 @@
 
 Name=Linux
 SoftPath=/dmdata/install/
-yum -y install  libgcc_s.so.1 libm.so.6  libstdc++.so.5 c++
+yum -y install  libstdc++.so.5 libgcc_s.so.1 libm.so.6 ld-linux.so.2
 cd /dmdata/install
 wget http://172.16.0.121:8080/dir/$Name.zip
 unzip $Name.zip
