@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 #Auth:SunYunfeng
 #sun_admin@126.com
-#检测网站响应状态及状态花费时间
+#检测网站响应状态及状态花费时间可结合zabbix报警
 
 import os,sys
 import time
