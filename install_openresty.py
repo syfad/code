@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-#coding=utf-8
+# -*- coding: utf-8 -*-
+# @Date    : 2017-11-21
+# @Author  : sunyf (sunyfad@gmail.com)
+# @Disc    : install Nginx
+# @Disc    : support python 2.x and 3.x
 
 import os
 import sys
@@ -55,7 +59,7 @@ def install_openresty():
     if res !=0:
         os.system('rm -f ' +pkg_name+'.tar.gz')
         os.system('rm -rf ' +pkg_name)
-        print('编译安装openresty失败，请检查安装相关依赖库......')
+        print('编译安装openresty失败，请检查安装相关依赖库,并重新运行此脚本安装......')
         sys.exit(1)
 
 if __name__ == '__main__':
