@@ -32,10 +32,17 @@ def install_openresty():
 
     print('####yum安装依赖包')
     cmd = "yum install gcc gcc-c++ zlib zlib-devel openssl openssl-devel pcre-devel pcre automake autoconf libtool make -y"
+    os.system("yum -y install pcre-devel")
     res = os.system(cmd)
     if res !=0:
         print('yum安装失败，请检查环境')
         sys.exit(1)
+
+    print('添加nginx用户')
+    cmd = 'useradd -s /sbin/nologin -M nginx'
+    res = os.system(cmd)
+    if res !=0:
+        print('nginx已存在，请检查')
 
     print('####下载安装包......')
     cmd = 'wget ' + nginx_pkg_url
