@@ -1,4 +1,5 @@
 #!/bin/bash
+#crontab 时钟同步
 
 ntpServer=(
 [0]=asia.pool.ntp.org
