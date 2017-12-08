@@ -1,4 +1,5 @@
 #!/bin/bash
+#初始化磁盘
 
 fdisk /dev/xvdb <<EOF
 n
