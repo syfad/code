@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
-#auth锛歴unyunfeng锛坰unyfad@gmail.com锛�
-#娲诲姩鍒楄〃
+#auth:sunyunfeng(sunyfad@gmail.com)
+#活动列表接口
 
 import urllib
 import urllib2
