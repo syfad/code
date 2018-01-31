@@ -9,7 +9,7 @@ import sys
 
 HOST = '172.16.0.159'
 USER = 'root'
-PASS = 'fYrqSUr3qptg'
+PASS = '****'
 
 def QueryDBs(sql):
     connection = pymysql.connect(host=HOST, user=USER, password=PASS, charset='utf8')
