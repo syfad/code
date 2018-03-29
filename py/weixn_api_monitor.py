@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf8 -*-
+# coding:utf-8
 #Auth:SunYunfeng
 #sun_admin@126.com
 #检测网站响应状态及状态花费时间可结合zabbix报警
@@ -33,6 +33,7 @@ def mail_to(code):
 
 #URL="http://58.246.220.31/sns/oauth2/access_token?appid=wx8d925967f5c4749f&secret=34e545c55273b339af1ce97fbe3b6968&code=001Otzms1TGzbp0s82ms1YWBms1OtzmG&grant_type=authorization_code"
 URL="https://api.mch.weixin.qq.com/pay/unifiedorder"
+#URL="https://api.mch.weixin.qq.com/pay/unifiedorder"
 c = pycurl.Curl()
 #c = pycurl.CURL_HTTP_VERSION_1_1
 
@@ -47,7 +48,7 @@ c.setopt(pycurl.DNS_CACHE_TIMEOUT, 30)
 
 #c.setopt(pycurl.CURLOPT_SSLVERSION, 3)
 
-indexfile = file('E:\pycharm\worke\content.txt', 'wb')
+indexfile = file('/Volumes/sunyf/pycharm/content.txt', 'wb')
 
 c.setopt(pycurl.WRITEHEADER, indexfile)
 c.setopt(pycurl.WRITEDATA, indexfile)
@@ -69,15 +70,18 @@ SIZE_DOWNLOAD = c.getinfo(c.SIZE_DOWNLOAD)
 HEADER_SIZE = c.getinfo(c.HEADER_SIZE)
 SPEED_DOWNLOAD = c.getinfo(c.SPEED_DOWNLOAD)
 
-print "HTTP状态码： %s" % (HTTP_CODE)
-print "DNS解析时间：%.2f ms" % (NAMELOOKUP_TIME*1000)
-print "建立连接时间：%.2f ms" % (CONNECT_TIME*1000)
-print "准备传输时间：%.2f ms" % (PRETRANSFER_TIME*1000)
-print "传输开始时间：%.2f ms" % (STARTTRANSFER_TIME*1000)
-print "传输结束总时间：%.2f ms" % (TOTAL_TIME*1000)
-print "下载数据包大小：%d bytes/s" %(SIZE_DOWNLOAD)
-print "HTTP头部大小： %d bytes/s" %(HEADER_SIZE)
-print "平均下载速度： %d bytes/s" %(SPEED_DOWNLOAD)
+print u"HTTP状态码： %s" % (HTTP_CODE)
+print u"DNS解析时间：%.2f ms" % (NAMELOOKUP_TIME*1000)
+print u"建立连接时间：%.2f ms" % (CONNECT_TIME*1000)
+print u"准备传输时间：%.2f ms" % (PRETRANSFER_TIME*1000)
+print u"传输开始时间：%.2f ms" % (STARTTRANSFER_TIME*1000)
+print u"传输结束总时间：%.2f ms" % (TOTAL_TIME*1000)
+print u"下载数据包大小：%d bytes/s" %(SIZE_DOWNLOAD)
+print u"HTTP头部大小： %d bytes/s" %(HEADER_SIZE)
+print u"平均下载速度： %d bytes/s" %(SPEED_DOWNLOAD)
+
+
+
 indexfile.close()
 c.close()
 

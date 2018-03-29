@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 #auth:sunyunfeng(sunyfad@gmail.com)
-#活动列表接口
+#娲诲姩鍒楄〃鎺ュ彛
 
 import urllib
 import urllib2
@@ -27,7 +27,7 @@ values = {
         "network": ""
     },
     "data": {
-        "type": 0
+        "type": 1
     }
 }
 
@@ -38,6 +38,8 @@ url = "http://space.6clue.com/activity/list"
 request = urllib2.Request(url, json.dumps(values), headers)
 #respose = urllib2.urlopen(request).read()
 respose = eval(urllib2.urlopen(request).read())
+
+#print respose
 
 if respose['error_code'] == 0:
     print 0
