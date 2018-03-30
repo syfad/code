@@ -15,12 +15,15 @@ USER_DICT = {
 }
 
 # def detail(request):
+#从indel.html 里传来的nid
 #     # # nid = request.GET.get('nid')
 #     # detail_info = USER_DICT[nid]
 #     # return render(request, 'detail.html', {'detail_info': detail_info})
 
 
-def detail(request, nid):
+def detail(request, uid, nid):
+    #urls.py传递的nid参数，添加nid参数
+    #动态传递参数，url匹配几个就得有参数，例如：(request, nid，uid)
     #return HttpResponse(nid)
     detail_info = USER_DICT[nid]
     return render(request, 'detail.html', {'detail_info': detail_info})
