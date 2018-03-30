@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #coding:utf-8
-import pymysql
+import Mysqldb
 import sys
 class check_mysql_repl():
     def __init__(self):
@@ -9,8 +9,8 @@ class check_mysql_repl():
         self.dbpass = 'wisp888'
         self.dbport = 3306
         self.sock = "/data/db_misc/mysql_3306.sock"
-        self.conn = pymysql.connect(unix_socket=self.sock) #根据实际情况连接
-        self.cursor = self.conn.cursor(cursorclass = pymysql.cursors.DictCursor)
+        self.conn = Mysqldb.connect(unix_socket=self.sock) #根据实际情况连接
+        self.cursor = self.conn.cursor(cursorclass = Mysqldb.cursors.DictCursor)
         self.sql = 'show slave status'
         self.cursor.execute(self.sql)
         self.data = self.cursor.fetchall()
