@@ -6,8 +6,28 @@ from django.shortcuts import render,HttpResponse,redirect
 
 # Create your views here.
 
+USER_DICT = {
+    '1': {'name':'root','email':'aaa@123.com'},
+    '2': {'name':'root1','email':'aaa@123.com'},
+    '3': {'name':'root2','email':'aaa@123.com'},
+    '4': {'name':'root3','email':'aaa@123.com'},
+    '5': {'name':'root4','email':'aaa@123.com'}
+}
+
+# def detail(request):
+#     # # nid = request.GET.get('nid')
+#     # detail_info = USER_DICT[nid]
+#     # return render(request, 'detail.html', {'detail_info': detail_info})
+
+
+def detail(request, nid):
+    #return HttpResponse(nid)
+    detail_info = USER_DICT[nid]
+    return render(request, 'detail.html', {'detail_info': detail_info})
+
+
 def index(request):
-    return HttpResponse('hello index')
+    return render(request, 'index.html', {'user_dict':USER_DICT} )
 
 # def login(request):
 #     if request.method == "GET":
