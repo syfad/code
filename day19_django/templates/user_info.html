@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title_index</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .menu{
+            display: block;
+            padding: 10px;
+        }
+    </style>
+    </title>
+</head>
+
+<body>
+{#    {{user_dict.1}}#}
+{#    <ul>#}
+{#        {% for k,row in user_dict.items %}#}
+{#            <li><a href="/detail/?nid={{ k }}"> {{ row.name }} </a></li>#}
+{#              <li>{{ k }}, {{ row }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+
+{#    <form action="/index.html/" method="post">#}
+{#        <p><input type="text" name="user" placeholder="user" /></p>#}
+{#        <p><input type="text" name="email" placeholder="mail" /></p>#}
+{#        <p><input type="submit" value="提交"></p>#}
+{##}
+{#    </form>#}
+{##}
+{#    <ul>#}
+{#        {% for k,row in user_dict.items %}#}
+{#            <li><a href="/detail-{{k}}.html"> {{ row.name }}</a></li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+
+    <div style="height: 48px;background: black;color: white">welcome to jiyu space</div>
+    <div style="position: absolute;top: 48px;bottom: 0;left: 0;width: 200px;background: burlywood">
+        <a class="menu" href="/cmdb/user_info/">用户管理</a>
+        <a class="menu" href="/cmdb/user_group/">用户组管理</a>
+        <a class="menu">主机管理</a>
+        <a class="menu">主机组管理</a>
+    </div>
+    <div style="position: absolute;top: 48px;left: 210px;bottom: 0;right: 0;overflow: auto">
+        <h3>用户列表</h3>
+        <ul>
+            {% for row in user_list %}
+                <li><a href="/cmdb/userdetail-{{ row.id }}/">{{ row.username }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
