@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^index/', views.index),
     url(r'^user_info/', views.user_info),
     url(r'^orm/', views.orm),
+    url(r'^admin/', admin.site.urls),
 
 ]
 
