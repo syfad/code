@@ -1,0 +1,17 @@
+#!/usr/bin/expect
+#expect是交互性很强的脚本语言，可以帮助运维人员实现批量管理成千上百台服务器操作，是一款很实用的批量部署工具！expect依赖于tcl，而linux系统里一般不自带安装tcl，所以需要手动安装。
+#yum install expect* -y
+if {$argc != 2}  {
+send_user "usage: expect xxxx.exp file host\n"
+exit
+}
+#define var
+set file [lindex $argv 0]
+set host [lindex $argv 1]
+set password "tttm@tttm123"
+spawn ssh-copy-id -i $file  root@$host
+expect {
+        "yes/no"   {send "yes\r";exp_continue}
+         "password" {send "$password\r"}
+}
+expect eof
