@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+#auth:SunYunfeng
+#mail:sun_admin@126.com
 
 #需要安装openssl 1.0.2.j 以上
 
