@@ -3,12 +3,14 @@
 #Auth:SunYunfeng
 #sun_admin@126.com
 
-import os
-
-# cmd = 'tail -f /dmdata/logs/nginx/space_here_cn_access.nginx.log'
+# cddmd = 'tail -f /dmdata/logs/nginx/space_here_cn_access.nginx.log'
 # os.system(cmd)
 
 import time
+import json
+import os
+
+os.chdir("/dmdata/logs/nginx/")
 
 def follow(therile):
     therile.seek(0,2)
@@ -20,9 +22,20 @@ def follow(therile):
             continue
         yield line
 
+#countall='/chat/notice/countall'
+#countall='/favicon.ico'
+countall='/'
+
 
 if __name__ == '__main__':
     logfile = open("space_here_cn_access.nginx.log", "r")
+    countall_num = 0
     loglines = follow(logfile)
     for line in loglines:
-        print line
+        dist=eval(line)
+        url=dist['url']
+        #return url
+        #xff=dist['xff']
+        if url == countall:
+            countall_num+=1
+            print countall_num
