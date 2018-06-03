@@ -33,6 +33,8 @@ urlpatterns = [
 urlpatterns = [
     url(r'^cmdb/', include("app02.urls")),
     url(r'^monitor/', include("app03.urls")),
+    url(r'^business/',views.business),
+    url(r'^host/',views.host)
 
 ]
 

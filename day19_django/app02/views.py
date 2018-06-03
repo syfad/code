@@ -163,7 +163,26 @@ class home(View):
 
 
 
+#=======================================================
+#主机管理练习
+def business(request):
+    #对象
+    v = models.Business.objects.all()
+    #QuerySet
+    #[obj(id,caption,code),obj(id,caption,code),obj(id,caption,code)]
+
+    v1 = models.Business.objects.all().values('id','caption')
+    #字典
+
+    v2 = models.Business.objects.all().values_list('id','caption')
+    #元组
+    return render(request, 'business.html', {'v': v,'v1': v1,'v2':v2})
 
 
+def host(request):
+    v = models.Host.objects.filter(nid__gt=0)
+    for row in v:
+        print(row.nid, row.hostname,row.ip,row.port,row.b_id,row.b.caption)
 
-
+    return HttpResponse("host")
+    #return render(request, 'host.html', {'v':v})
