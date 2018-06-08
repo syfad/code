@@ -68,6 +68,7 @@ def login():
 def login_status():
     data = login()
     return data['errno']
+    #print data
 
 def uid():
      data = login()
@@ -79,3 +80,4 @@ def token():
     token = data['data']['token']
     return token
 
+#login_status()
