@@ -9,26 +9,27 @@ import time
 import pymysql
 reload(sys)
 
-# HOST = '172.16.0.148'
-# USER = 'readonly'
-# PASS = ''
-#
-# def QueryDB(sql):
-#     connection = pymysql.connect(host=HOST, user=USER, password=PASS, charset='utf8')
-#     try:
-#         with connection.cursor() as cursor:
-#             cursor.execute(sql)
-#             result = cursor.fetchone()
-#             return result[0]
-#     except Exception, e:
-#         print e
-#     finally:
-#         connection.close()
-#
-# def get_access_token():
-#     sql = 'SELECT token FROM space.sessions where platform=11 AND uid=2619599'
-#     access_token=QueryDB(sql)
-#     return access_token
+HOST = '172.16.0.148'
+USER = 'readonly'
+PASS = '8I&MI0czhKDF%agS'
+
+def QueryDB(sql):
+    connection = pymysql.connect(host=HOST, user=USER, password=PASS, charset='utf8')
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(sql)
+            result = cursor.fetchone()
+            return result[0]
+    except Exception, e:
+        print e
+    finally:
+        connection.close()
+
+def token():
+    #sql = 'SELECT token FROM space.sessions where platform=11 AND uid=2619599'
+    sql='SELECT token FROM space.sessions where  uid=2664492'
+    access_token=QueryDB(sql)
+    return access_token
 
 #获取时间戳
 timestr=int(time.time())
@@ -75,9 +76,12 @@ def uid():
      uid = data['data']['uid']
      return uid
 
-def token():
-    data = login()
-    token = data['data']['token']
-    return token
+# def token():
+#     data = login()
+#     token = data['data']['token']
+#     return token
+
 
 #login_status()
+print token()
+# print uid()
