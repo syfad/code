@@ -11,7 +11,7 @@ reload(sys)
 
 HOST = '172.16.0.148'
 USER = 'readonly'
-PASS = '8I&MI0czhKDF%agS'
+PASS = ''
 
 def QueryDB(sql):
     connection = pymysql.connect(host=HOST, user=USER, password=PASS, charset='utf8')
