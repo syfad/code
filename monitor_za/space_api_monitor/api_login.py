@@ -27,9 +27,11 @@ def QueryDB(sql):
 
 def token():
     #sql = 'SELECT token FROM space.sessions where platform=11 AND uid=2619599'
-    sql='SELECT token FROM space.sessions where  uid=2664492'
+    sql='SELECT token FROM space.sessions where uid=2664492'
     access_token=QueryDB(sql)
     return access_token
+
+aces_token=token()
 
 #获取时间戳
 timestr=int(time.time())
@@ -83,5 +85,5 @@ def uid():
 
 
 #login_status()
-print token()
+#print token()
 # print uid()
