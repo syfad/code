@@ -10,9 +10,9 @@ import socket
 import os
 import json
 
-client = socket.socket()
-
-client.connect(('127.0.0.1',9999))
+# client = socket.socket()
+#
+# client.connect(('127.0.0.1',9999))
 
 
 class FtpClient(object):
@@ -30,7 +30,7 @@ class FtpClient(object):
         print(msg)
 
     def connect(self, ip, port):
-        self.client.connect(ip, port)
+        self.client.connect((ip, port))
 
     def interactive(self):
         while True:
@@ -71,5 +71,5 @@ class FtpClient(object):
 
 
 ftp = FtpClient()
-ftp.connect("locahost", 9998)
+ftp.connect("127.0.0.1", 9998)
 ftp.interactive()

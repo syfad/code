@@ -26,6 +26,7 @@ while True:
             break
 
         cmd, filename = data.decode().split()
+
         print(filename)
 
         if os.path.isfile(filename):
