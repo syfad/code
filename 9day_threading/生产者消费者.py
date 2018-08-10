@@ -12,7 +12,6 @@ import threading
 q = Queue.Queue(0)
 
 def Producer(name):
-
     for i in range(10):
         q.put("apple %s" %i)
 
