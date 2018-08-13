@@ -21,7 +21,7 @@ from pymongo import MongoClient
 def user_num():
     sql = 'select count(*) from space.members'
     num = querysql.QueryDBs(sql)
-    print(num[0][0])
+    print num[0][0]
 
 
 user_num()
