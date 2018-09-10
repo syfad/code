@@ -8,10 +8,12 @@
 
 from multiprocessing import Process, Pool
 import time
+import os
 
 
 def Foo(i):
     time.sleep(2)
+    print("in process", os.getpid())
     return i + 100
 
 
@@ -21,10 +23,17 @@ def Bar(arg):
 
 pool = Pool(5)
 
+#=====================================
+# 进程池中有两个方法：
+# apply        串行运行
+# apply_async   并行运行
+#=====================================
+
 for i in range(10):
-    pool.apply_async(func=Foo, args=(i,), callback=Bar)
+    pool.apply_async(func=Foo, args=(i,), callback=Bar)    #callback = 回调，func执行完成，执行bar
+    #pool.apply_async(func=Foo, args=(i,))
     # pool.apply(func=Foo, args=(i,))
 
 print('end')
-pool.close()
+pool.close()    #先关闭进程池，再join
 pool.join()  # 进程池中进程执行完毕后再关闭，如果注释，那么程序直接关闭。
