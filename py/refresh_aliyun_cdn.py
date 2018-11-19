@@ -3,6 +3,7 @@
 # @Date    : 2018-11-19
 # @Author  : SunYunfeng(sun_admin@126.com)
 # @Disc    : support python 2.x and 3.x
+# 刷新aliyun CDN，使用前更改：文件或目录
 
 import sys,os
 import urllib, urllib2
