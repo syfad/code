@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .item .header {
+            background-color: #0a6aa1;
+            height: 60px;
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            font-family: 微软雅黑, serif;
+            border: 2px #DDDDDD solid;
+        }
+
+        .body {
+            height: 30px;
+            background-color: darkgrey;
+            text-align: center;
+            border: 0.5px #DDDDDD solid;
+        }
+
+    </style>
+</head>
+<body>
+<div style="position: fixed; left: 0; right: 0; top: 0; background-color: #0a6aa1; height: 40px">
+    <div style="width: 980px; margin: auto; color: white; line-height: 40px">
+        <a>管理后台demo</a>
+        <a style="float: right; margin-right: 15px">登录</a>
+        <a style="float: right; margin-right: 15px;">注册</a>
+    </div>
+</div>
+
+
+<div style="margin-top: 80px; height: 50px; width: 200px">
+    <div class="item">
+        <div id="i1" class="header" onclick="changeMenu('i1');">菜单一</div>
+        <div class="content">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+
+    <div class="item">
+        <div id="i2" class="header" onclick="changeMenu('i2');">菜单二</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+
+    <div class="item">
+        <div id="i3" class="header" onclick="changeMenu('i3');">菜单三</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    function changeMenu(nid) {
+        var current_id = document.getElementById(nid);
+        var item_list = current_id.parentElement.parentElement.children;
+
+        for (var i = 0 ; i<item_list.length; i++) {
+            var current_item = item_list[i];
+            current_item.children[1].classList.add('hide')
+        }
+        current_id.nextElementSibling.classList.remove('hide')
+
+    }
+</script>
+</html>
