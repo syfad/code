@@ -36,8 +36,8 @@
 <div>
     <input type="button" value="添加" onclick="ShowModel();">
     <input type="button" value="全选" onclick="ChooseAll();">
-    <input type="button" value="取消" onclick="CancleAll();">
-    <input type="button" value="反选" onclick="RevereseAll();">
+    <input type="button" value="取消" onclick="CancelAll();">
+    <input type="button" value="反选" onclick="ReverseAll();">
     <!--onclick点击事件，执行script ShowModel函数-->
     <table>
         <thead>
@@ -109,7 +109,7 @@
             checkbox.checked = true;
         }
     }
-        function CancleAll() {
+        function CancelAll() {
         var tbody = document.getElementById('tb');
         //获取所有的tr
         var tr_list = tbody.children;
@@ -120,7 +120,7 @@
             checkbox.checked = false;
         }
     }
-        function RevereseAll() {
+        function ReverseAll() {
         var tbody = document.getElementById('tb');
         //获取所有的tr
         var tr_list = tbody.children;

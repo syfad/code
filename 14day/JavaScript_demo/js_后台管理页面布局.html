@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理页面布局</title>
+    <link rel="stylesheet" href="all.min.css">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .left{
+            float: left;
+        }
+
+        .right{
+            float: right;
+        }
+
+        .pg-header {
+            height: 48px;
+            background-color: #0a6aa1;
+            color: white;
+            line-height: 48px;
+        }
+
+        .pg-header .logo{
+            width: 200px;
+            background-color: #00a6b2;
+            text-align: center;
+        }
+
+        .pg-header .user{
+            margin-right: 80px;
+            padding: 0 20px;
+        }
+
+        .pg-header .user:hover{
+            background-color: blue;
+        }
+
+        .pg-header .user:hover .b{
+            display: block;
+        }
+
+        .pg-header .user .b{
+            z-index: 20;
+            position: absolute;
+            top: 48px;
+            right: 44px;
+            background-color: #00a6b2;
+            width: 160px;
+            display: none;
+        }
+
+        .pg-header .user .b a{
+            display: block;
+        }
+
+        .pg-content .menu{
+            position: absolute;
+            /*position: fixed;*/
+            top: 48px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: #DDDDDD;
+        }
+
+        .pg-content .content{
+            position: absolute;
+            /*position: fixed;*/
+            top: 48px;
+            right: 0;
+            bottom: 0;
+            left: 200px;
+            background-color: #24AA7A;
+            overflow: auto;
+            z-index: 10;
+            /*min-width: 300px;*/
+            /*最小边距，保证页面完成展示，不会拖拽改变宽度*/
+        }
+    </style>
+
+</head>
+<body>
+<div class="pg-header">
+    <div class="logo left">
+        机遇空间
+    </div>
+    <div class="user right">
+        <a>
+            <img style="width: 40px; height: 40px; border-radius: 50%;" src="IMG1.jpg">
+        </a>
+        <div class="b">
+            <a>我的资料</a>
+            <a>注销</a>
+        </div>
+    </div>
+
+</div>
+<div class="pg-content">
+    <div class="menu left">assss</div>
+    <div class="content left">
+        <p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p>
+        <p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p><p>sd</p>
+        <i class="far fa-bell"></i>
+    </div>
+</div>
+
+</body>
+</html>
