@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .c1 {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.6;
+            z-index: 9;
+        }
+
+        .c2 {
+            width: 500px;
+            height: 300px;
+            background-color: white;
+            position: fixed;
+            left: 50%;
+            right: 50%;
+            margin-left: -250px;
+            margin-top: -50px;
+            z-index: 10;
+        }
+
+        .item .header {
+            background-color: #0a6aa1;
+            height: 60px;
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            font-family: 微软雅黑, serif;
+            border: 2px #DDDDDD solid;
+        }
+
+        .body {
+            height: 30px;
+            background-color: darkgrey;
+            text-align: center;
+            border: 0.5px #DDDDDD solid;
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="margin-top: 80px; height: 50px; width: 200px">
+    <div class="item">
+        <div id="i1" class="header">用户管理</div>
+        <div class="content">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+
+    <div class="item">
+        <div id="i2" class="header">资产管理</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+
+    <div class="item">
+        <div id="i3" class="header">权限管理</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div id="i4" class="header">会话管理</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous">
+</script>
+
+<script>
+    //.click
+    $('.header').click(function () {
+        console.log(this);
+        // $(this).next(div)    下一个
+        // $(this).prev()       上一个
+        // $(this).parent()     父
+        // $(this).children()   孩子
+        // $(this).sibling()    兄弟
+        $(this).next().removeClass('hide')
+    })
+
+</script>
+
+</html>

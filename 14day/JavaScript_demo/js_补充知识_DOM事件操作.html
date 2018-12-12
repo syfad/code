@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--============================================-->
+<!--操作标签，添加标签-->
+<input type="button" value="添加" onclick="addEle()">
+<input type="button" value="添加add" onclick="addEle2()">
+
+<div id="i1">
+    <p><input type="text"></p>
+</div>
+
+
+<!--============================================-->
+<!--form 表单提交-->
+<form id="f1" action="http://www.baidu.com">
+    <input type="text">
+    <input type="submit" value="提交">
+    <a onclick="submitForm()">提交吧</a>
+</form>
+
+
+<!--========================================-->
+
+<div id="status"></div>
+<input type="button" value="删除" onclick="deleteEle();">
+
+<!--========================================-->
+<!--DOM事件操作-->
+<table border="2" ; width="300px">
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+</table>
+
+
+</body>
+
+<script>
+    //操作标签，创建标签
+    //字符串形式
+    function addEle() {
+        var tag = "<p><input type=\"text\"></p>";
+        document.getElementById('i1').insertAdjacentHTML("beforeEnd", tag)
+    }
+
+    //注意：第一个参数只能是'beforeBegin'、 'afterBegin'、 'beforeEnd'、 'afterEnd'
+    //标签形式
+    function addEle2() {
+        var tag = document.createElement('input');
+        tag.setAttribute('type', 'text');
+        tag.style.fontSize = '16px';
+        tag.style.color = 'red';
+        // var p = document.createElement('p')
+
+        document.getElementById('i1').appendChild(tag)
+    }
+
+    //任何标签通过DOM都可以提交表单
+    function submitForm() {
+        document.getElementById('f1').submit();
+        //confirm确认框信息
+        var info = confirm('确认框弹出信息？');
+        console.log(info)
+    }
+
+    //定时，清除定时器
+    function deleteEle() {
+        document.getElementById('status').innerText = "已删除";
+        setTimeout(function () {
+            document.getElementById('status').innerText = "";
+        }, 5000);
+    }
+
+    //DOM事件操作
+    var myTrs = document.getElementsByTagName("tr")
+    var len = myTrs.length;
+    for (var i = 0; i < len; i++) {
+        myTrs[i].onmouseover = function () {
+            this.style.background = "red";
+        }
+        myTrs[i].onmouseout = function () {
+            this.style.backgroundColor = "";
+        }
+    }
+
+</script>
+</html>
