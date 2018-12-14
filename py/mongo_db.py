@@ -15,9 +15,9 @@
 
 from pymongo import MongoClient
 
-class MongoDBPipeline(object):
-    def __init__(self,db,col,address,replicaSet):
 
+class MongoDBPipeline(object):
+    def __init__(self, db, col, address, replicaSet):
         # self.db = DB['db']
         # self.col = DB['col']
         # #connection = pymongo.Connection(self.server,self.port)
@@ -25,18 +25,18 @@ class MongoDBPipeline(object):
         # connection = MongoClient(DB['address'], replicaSet=DB['replicaSet'])
         # db = connection[self.db]
         # self.collection = db[self.col]
-        #print 'db is ['+db+']'
+        # print 'db is ['+db+']'
         self.db = db
         self.col = col
-        #connection = pymongo.Connection(self.server,self.port)
-        #connection = MongoClient(self.server,self.port)
+        # connection = pymongo.Connection(self.server,self.port)
+        # connection = MongoClient(self.server,self.port)
         connection = MongoClient(address, replicaSet=replicaSet)
         db = connection[self.db]
         self.collection = db[self.col]
 
     def save(self, item):
-        #self.collection.insert_one(dict(item))
-        #elf.collection.insert_one(item)
+        # self.collection.insert_one(dict(item))
+        # elf.collection.insert_one(item)
         self.collection.insert_one(item)
         return item
 
@@ -46,12 +46,15 @@ class MongoDBPipeline(object):
 
     def find(self, item):
         item = self.collection.find_one(item)
-        #print item
+        # print item
         return item
 
     def aggregate(self, item):
         item = self.collection.aggregate(item)
         return item
 
-
-
+    # DB = {'address': '192.168.100.186:20301,192.168.100.133:20301', 'db': 'space', 'col': 'master_where',
+    #       'replicaSet': 'dmmongo'}
+    # find_obj = MongoDBPipeline(DB['db'], DB['col'], DB['address'], DB['replicaSet'])
+    # #padd = find_obj.find({})['ip']
+    # #ipadd = find_obj.find({}).sort([("_id",1)])
