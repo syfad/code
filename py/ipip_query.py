@@ -4,6 +4,7 @@
 # @Author  : SunYunfeng(sun_admin@126.com)
 # @Disc    : 
 # @Disc    : support python 2.x and 3.x
+#在ipip.net 查询坐标经纬度，调百度地图接口查询具体地址，写入mongodb
 
 
 from pyquery import PyQuery as pq
