@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .c1 {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.6;
+            z-index: 9;
+        }
+
+        .c2 {
+            width: 500px;
+            height: 300px;
+            background-color: white;
+            position: fixed;
+            left: 50%;
+            right: 50%;
+            margin-left: -250px;
+            margin-top: -50px;
+            z-index: 10;
+        }
+
+        .item .header {
+            background-color: #0a6aa1;
+            height: 60px;
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            font-family: 微软雅黑, serif;
+            border: 2px #DDDDDD solid;
+        }
+
+        .body {
+            height: 30px;
+            background-color: darkgrey;
+            text-align: center;
+            border: 0.5px #DDDDDD solid;
+        }
+
+        .edit{
+            background-color: #00a6b2;
+        }
+        .delete{
+            background-color: #00a6b2;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="position: absolute; left: 0; right: 0; top: 0; background-color: #0a6aa1; height: 40px">
+    <div style="width: 980px; margin: auto; color: white; line-height: 40px">
+        <a>管理后台demo</a>
+        <a style="float: right; margin-right: 15px">登录</a>
+        <a style="float: right; margin-right: 15px;">注册</a>
+    </div>
+</div>
+
+<div style="margin-top: 80px; height: 50px; width: 200px">
+    <div class="item">
+        <div id="i1" class="header">用户管理</div>
+        <div class="content">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+
+    <div class="item">
+        <div id="i2" class="header">资产管理</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+
+    <div class="item">
+        <div id="i3" class="header">权限管理</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div id="i4" class="header">会话管理</div>
+        <div class="content hide">
+            <div class="body">内容1</div>
+            <div class="body">内容2</div>
+            <div class="body">内容3</div>
+        </div>
+    </div>
+</div>
+
+
+<div style="position: absolute; left: 300px; width: 800px;">
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>名称</th>
+            <th>用户名</th>
+            <th>用户组</th>
+            <th>动作</th>
+        </tr>
+
+        </thead>
+
+        <tbody id="tb1">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td target="name">admin</td>
+            <td target="user">管理员</td>
+            <td target="group">运营部</td>
+            <td>
+                <input class="edit" type="button" value="编辑" onclick="ShowModel()">
+                <a class="delete">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td target="name">张三</td>
+            <td target="user">技术员</td>
+            <td target="group">技术部</td>
+            <td>
+                <input class="edit" type="button" value="编辑" onclick="ShowModel()">
+                <a class="delete">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td target="name">李四</td>
+            <td target="user">财务员</td>
+            <td target="group">财务部</td>
+            <td>
+                <input class="edit" type="button" value="编辑" onclick="ShowModel()">
+                <a class="delete">删除</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <a>添加</a>
+    <input type="button" value="全选" onclick="chooseAll()">
+    <input type="button" value="反选" onclick="reverseAll()">
+    <input type="button" value="取消" onclick="cancelAll()">
+
+</div>
+
+
+<div id="h1" class="hide c1"></div>
+
+
+<div id="h2" class="hide c2">
+    <div style="margin-top: 50px; margin-left: 10%">
+        <p>名 称<input name="name" type="text"></p>
+        <p>用户名<input name="user" type="text"></p>
+        <p>用户组<input name="group" type="text"></p>
+    </div>
+    <div>
+        <p>
+            <input id="m1" type="button" value="确认" onclick="cancelModel()">
+            <input id="m2" type="button" value="取消" onclick="cancelModel()">
+        </p>
+    </div>
+</div>
+
+
+</body>
+<script
+        src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous">
+</script>
+
+<script>
+    //.click
+    //展示点击的内容，隐藏其他
+    $('.header').click(function () {
+        //console.log(this);
+        // $(this).next(div)    下一个
+        // $(this).prev()       上一个
+        // $(this).parent()     父
+        // $(this).children()   孩子
+        // $(this).sibling()    兄弟
+        // $('#i1').find('#i1') 子子孙孙查找
+
+        // 链式编程
+
+        //$(...).click(function(){
+        //      this
+        // })
+        $(this).next().removeClass('hide')
+        $(this).parent().siblings().find('.content').addClass('hide')
+    })
+
+    function ShowModel() {
+        $('#h1, #h2').removeClass('hide')
+    }
+
+    $('.edit').click(function () {
+        //循环获取tds中的内容
+        //获取<td>内容</td>中间的内容
+        //赋值给input标签中的value
+        var tds = $(this).parent().prevAll();
+
+        //第一种写法：
+        // 编辑框点击后，取值到编辑框里的对应位置
+        // var group = $(tds[0]).text();
+        // var user = $(tds[1]).text();
+        // var name = $(tds[2]).text();
+        //
+        // $('#h2 input[name="name"]').val(name);
+        // $('#h2 input[name="user"]').val(user);
+        // $('#h2 input[name="group"]').val(group);
+
+        //第二种写法，
+        tds.each(function () {
+            //this,代指每个td
+            //n 获取td中的target的属性值
+            var n = $(this).attr('target');
+            //text 获取td中的内容值
+            var text = $(this).text();
+
+            var a1 = '#h2 input[name="';
+            var a2 = '"]';
+            var temp = a1 + n + a2;
+            $(temp).val(text)
+
+        })
+    })
+
+    //删除操作
+    $('.delete').click(function () {
+        $(this).parent().parent().remove()
+    })
+
+    function cancelModel() {
+        $('#h1, #h2').addClass('hide')
+    }
+
+
+
+
+
+
+
+
+    //======================全选反选取消框==============================
+
+    function chooseAll() {
+        var current_tb = document.getElementById('tb1');
+        var tb_list = current_tb.children;
+        for (var i = 0; i < tb_list.length; i++) {
+            var current_tr = tb_list[i];
+            var checkbox = current_tr.children[0].children[0];
+            checkbox.checked = true;
+        }
+    }
+    function cancelAll() {
+        var current_tb = document.getElementById('tb1');
+        var tb_list = current_tb.children;
+        for (var i = 0; i < tb_list.length; i++) {
+            var current_tr = tb_list[i];
+            var checkbox = current_tr.children[0].children[0];
+            checkbox.checked = false;
+        }
+    }
+    function reverseAll() {
+        var current_tb = document.getElementById('tb1');
+        var tb_list = current_tb.children;
+        for (var i = 0; i < tb_list.length; i++) {
+            var current_tr = tb_list[i];
+            var checkbox = current_tr.children[0].children[0];
+            if (checkbox.checked) {
+                checkbox.checked = false;
+            } else {
+                checkbox.checked = true;
+            }
+        }
+    }
+    //====================================================
+
+
+</script>
+
+</html>

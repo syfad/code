@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .hide{
+            display: none;
+        }
+        .menu{
+            height: 38px;
+            background-color: darkgrey;
+            line-height: 38px;
+        }
+
+        .active{
+            background-color: rebeccapurple;
+        }
+
+        .menu .menu-item{
+            float: left;
+            border-right: 1px solid red;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+
+        .content{
+            min-height: 50px;
+            border: 1px solid #eeeeee;
+
+        }
+    </style>
+
+</head>
+<body>
+<div style="width: 700px; margin: 0 auto;">
+
+    <div class="menu">
+        <div class="menu-item active" a="1">详情</div>
+        <div class="menu-item" a="2">评论</div>
+        <div class="menu-item" a="3">记录</div>
+    </div>
+    <div class="content">
+        <div b="1">实物链接</div>
+        <div class="hide" b="2">实物</div>
+        <div class="hide" b="3">链接</div>
+    </div>
+</div>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+
+<script>
+    $('.menu-item').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        var target = $(this).attr('a');
+        //第一种写法，
+        //找到b等于target的值，移除hide
+        //$('.content').children("[b='"+ target+"']").removeClass('hide').siblings().addClass('hide');
+
+        //按索引查找index关键字。
+        var index = $(this).index()
+        // console.log(index);
+        //按索引查找
+        $('.content').children().eq(index).removeClass('hide').siblings().addClass('hide');
+    })
+</script>
+
+</html>
