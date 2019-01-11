@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form id="d1" action="笔记一.html" method="POST">
+
+        <div><input type="text"></div>
+        <div><input type="password"></div>
+        <div><input type="text"></div>
+        <div><input type="password"></div>
+        <div><input type="text"></div>
+        <div><input type="password"></div>
+
+        <input type="submit" value="提交">
+
+</form>
+
+</body>
+
+<script
+        src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous">
+</script>
+
+<script>
+    $(':submit').click(function () {
+        var flag = true;
+        $('.error').remove();
+
+        $('#d1').find('input[type="text"],input[type="password"]').each(function () {
+            var v = $(this).val();
+
+            if (v.length <= 0) {
+                //如果，有未填的字段，将flag置未false，阻止提交事件。
+                flag = false;
+
+                var tag = document.createElement('span');
+                tag.innerHTML = '必填';
+                tag.className = 'error';
+                $(this).after(tag);
+                //return false;
+            }
+        });
+        return flag;
+        // var v = $(this).prev().val();
+        // if (v.length > 0) {
+        //     return true;
+        // } else {
+        //     alert('请输入内容！')
+        //     return false;
+        // }
+    })
+
+</script>
+
+</html>
