@@ -14,14 +14,14 @@
 
 <form id="d1" action="笔记一.html" method="POST">
 
-        <div><input type="text"></div>
-        <div><input type="password"></div>
-        <div><input type="text"></div>
-        <div><input type="password"></div>
-        <div><input type="text"></div>
-        <div><input type="password"></div>
+    <div><input type="text" name="用户名"></div>
+    <div><input type="password" name="pwd"></div>
+    <div><input type="text" name="user"></div>
+    <div><input type="password" name="pwd"></div>
+    <div><input type="text" name="user"></div>
+    <div><input type="password" name="pwd"></div>
 
-        <input type="submit" value="提交">
+    <input type="submit" value="提交">
 
 </form>
 
@@ -34,32 +34,63 @@
 </script>
 
 <script>
-    $(':submit').click(function () {
-        var flag = true;
-        $('.error').remove();
+    // ==================================================================
+    //当页面 "框架" 加载完毕后，自动执行，两种写法：
+    $(document).ready(function () {
+        //要执行的js代码段
+    });
+    //第二种，最简单的写法
+    $(function () {
+    })
 
-        $('#d1').find('input[type="text"],input[type="password"]').each(function () {
-            var v = $(this).val();
+    // ==================================================================
+    //jquery扩展，第一种写法
+    $.extend({
+        'abc':function () {
+            return 'abc';
+        }
+    });
 
-            if (v.length <= 0) {
-                //如果，有未填的字段，将flag置未false，阻止提交事件。
-                flag = false;
+    var s = $.abc();
+    alert(s);
 
-                var tag = document.createElement('span');
-                tag.innerHTML = '必填';
-                tag.className = 'error';
-                $(this).after(tag);
-                //return false;
-            }
-        });
-        return flag;
-        // var v = $(this).prev().val();
-        // if (v.length > 0) {
-        //     return true;
-        // } else {
-        //     alert('请输入内容！')
-        //     return false;
-        // }
+    //jquery扩展，第二种写法
+    $.fn.extend({
+
+    });
+
+
+    //==================================================================
+    //验证表单
+    $(function () {
+        $(':submit').click(function () {
+            var flag = true;
+            $('.error').remove();
+
+            $('#d1').find('input[type="text"],input[type="password"]').each(function () {
+                var v = $(this).val();
+                var x = $(this).attr('name');
+
+                if (v.length <= 0) {
+                    //如果，有未填的字段，将flag置未false，阻止提交事件。
+                    flag = false;
+
+                    var tag = document.createElement('span');
+                    tag.innerHTML = x + ' 必填';
+                    tag.className = 'error';
+                    $(this).after(tag);
+                    //return false;
+                }
+            });
+            return flag;
+            // var v = $(this).prev().val();
+            // if (v.length > 0) {
+            //     return true;
+            // } else {
+            //     alert('请输入内容！')
+            //     return false;
+            // }
+        })
     })
 
 </script>
