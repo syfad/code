@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            padding: 50px;
+            border: 1px solid #dddddd;
+        }
+
+        .item {
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="item">
+        <span>赞</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="item">
+        <span>赞</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="item">
+        <span>赞</span>
+    </div>
+</div>
+
+<div>
+    <!--表单验证-->
+    <a onclick="return ClickOn()" href="http://www.aiospace.com">aiospace</a>
+    <a id="i1" href="http://www.aiospace.com">aiospace-XXX</a>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+
+<script>
+    $('.item').click(function () {
+        AddFavor(this);
+    });
+
+    function AddFavor(self) {
+        var fontSize = 15;
+        var top = 0;
+        var right = 0;
+        var opacity = 1;
+
+        var tag = document.createElement('span');
+        $(tag).text('+1');
+        $(tag).css('color', 'green');
+        $(tag).css('position', 'absolute');
+        $(tag).css('fontSize', fontSize + "px");
+        $(tag).css('right', right + "px");
+        $(tag).css('opacity', opacity);
+        $(tag).css('top', top + 'px');
+        $(self).append(tag);
+
+        var obj = setInterval(function () {
+            fontSize = fontSize + 5;
+            top = top - 5;
+            right = right - 5;
+            opacity = opacity - 0.1;
+
+            $(tag).css('fontSize', fontSize + "px");
+            $(tag).css('right', right + "px");
+            $(tag).css('opacity', opacity);
+
+            //当透明度小于0时，删除span标签
+            if (opacity < 0) {
+                clearInterval(obj);
+                $(tag).remove();
+            }
+        }, 40);
+
+
+    }
+
+    //表单验证
+    //DOM绑定事件方法
+    function ClickOn() {
+        alert($(this).text());
+        return true;
+    }
+
+    //jQuery绑定事件方法
+    $('#i1').click(function () {
+        alert(456);
+        return false;
+    })
+
+
+
+</script>
+</html>
