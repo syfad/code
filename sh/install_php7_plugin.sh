@@ -15,7 +15,7 @@ Memcached=memcached-3.0.4
 Mongodb=mongodb-1.4.3
 
 
-echo "###cphalcon php框架安装###"
+echo "###phalcon php框架安装###"
 yum -y install git
 cd $pkg_path
 if [ ! -d $pkg_path/$Cphalcon ];then
