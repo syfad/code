@@ -12,8 +12,43 @@
     <!--关键字搜索-->
     <!--<meta name="keyword" content="python 学习路途">-->
     <title>Title</title>
+
+    <script type="text/javascript">
+        setInterval("JsTimer()", 1000);
+        function JsTimer() {
+            var ClockTime = new Date();
+            var ClockHours = ClockTime.getHours();
+            var ClockMinutes = ClockTime.getMinutes();
+            var ClockSeconds = ClockTime.getSeconds();
+
+            if (ClockHours <= 9)
+                ClockHours = "0"+ClockHours;
+            if (ClockMinutes <= 9)
+                ClockMinutes = "0"+ClockMinutes;
+            if (ClockSeconds <=9)
+                ClockSeconds = "0"+ClockSeconds;
+
+            JsClock.innerHTML = ClockHours+":"+ClockMinutes+":"+ClockSeconds;
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        var i=0;
+        for (i=0;i<=10;i++)
+        {
+            if (i==9){break}
+            document.write("第几次" + i)
+            document.write("<br />")
+        }
+    </script>
+
 </head>
 <body>
+    <br>
+    <span id="JsClock"></span>
+    <br>
+
     <a href="http://m.6clue.com">机&nbsp;遇空间网络科技公司</a>
     <p>我是段落段落段落段落段落<br/>接着换行换行换行换行段落段落段落段落段落段落段落</p>
     <h1>字符最大</h1>
@@ -23,5 +58,12 @@
     <span>白板白板</span>
     <div>123</div>
     <div>123</div>
+
+    <details>
+        <summary>HTML 5 将必然会成为未来互联网的主要语言</summary>
+        <p>HTML 提供完全符合web标准的网页设计方案</p>
+    </details>
+
+
 </body>
 </html>
