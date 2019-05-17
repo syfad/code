@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: httpd-test
+spec:
+  rules:
+  - host: space.here.cn
+    http:
+      paths:
+      - backend:
+          serviceName: httpd
+          servicePort: 80
+  - host: api.here.cn
+    http:
+      paths:
+      - backend:
+          serviceName: nginx
+          servicePort: 80
