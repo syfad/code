@@ -1,0 +1,26 @@
+---
+- hosts: tomcat-solr
+  vars_files:
+    - vars.yaml
+
+  tasks:
+    - name: 发送JDK软件包和java配置到远程主机
+      copy: "src={{ item.src }} dest={{ item.dest }}"
+      with_items:
+        - src: "./jdk-8u211-linux-x64.tar.gz"
+            dest: "/tmp/"
+        - src: "./java.sh"
+            dest: "/etc/profile.d/"
+
+    - name: 创建java安装目录
+      command: >
+              mkdir -p /dmdata/server/java
+    - name: 解压JDK软件包
+      command: >
+              tar -C /dmdata/server/java -xvf {{ download_dir }}/jdk-8u211-linux-x64.tar.gz --strip-components=1
+    - name: 为java命令更新alternatives
+      command: >
+              update-alternatives --install /usr/bin/java java /dmdata/server/java 300
+    - name: 为java更新alternatives
+      command: >
+              update-alternatives --install /usr/bin/javac javac /dmdata/server/java 300

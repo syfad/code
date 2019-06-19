@@ -1,0 +1,11 @@
+---
+#软件包下载路径
+download_dir: /tmp
+#tomcat 版本号
+tomcat_version: 8.0.35
+#tomcat安装路径
+tomcat_dir: /opt/tomcat
+#solr 安装路径
+solr_dir: /opt/solr
+#solr版本号
+solr_version: 6.1.0
