@@ -8,9 +8,9 @@
       copy: "src={{ item.src }} dest={{ item.dest }}"
       with_items:
         - src: "./jdk-8u211-linux-x64.tar.gz"
-            dest: "/tmp/"
+          dest: "/tmp"
         - src: "./java.sh"
-            dest: "/etc/profile.d/"
+          dest: "/etc/profile.d/"
 
     - name: 创建java安装目录
       command: >
@@ -24,3 +24,20 @@
     - name: 为java更新alternatives
       command: >
               update-alternatives --install /usr/bin/javac javac /dmdata/server/java 300
+
+
+    - name: 创建tomcat安装目录
+      command: >
+              mkdir -p {{ tomcat_dir }}
+
+    - name: 添加运行Tomcat所需的普通用户tomcat
+      user: "name=tomcat shell=/sbin/nologin"
+
+    - name: 下载tomcat软件包
+      get_url:
+          url: "http://apache.fayea.com/tomcat/tomcat-8/v{{ tomcat_version }}/bin/apache-tomcat-{{ tomcat_version }}.tar.gz"
+          dest: "{{ download_dir }}/apache-tomcat-{{ tomcat_version }}.tar.gz"
+
+    - name: 解压缩tomcat软件包
+      command: >
+              tar -C {{ tomcat_dir }} -xvf {{ download_dir }}/apache-tomcat-{{ tomcat_version }}.tar.gz --strip-components=1
