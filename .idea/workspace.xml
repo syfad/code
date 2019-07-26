@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ee3b324-50b0-40b2-8886-a92ead4fd05d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Ansible_model/ansible_api_files/new_api_module.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ansible_model/ansible_demo" beforeDir="false" afterPath="$PROJECT_DIR$/Ansible_model/ansible_demo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ansible_model/tomcal/playbook.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Ansible_model/tomcal/playbook.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ansible_model/tomcal/vars.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Ansible_model/tomcal/vars.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,79 +18,17 @@
     <SUITE FILE_PATH="coverage/code$cpu_number.coverage" NAME="cpu_number Coverage Results" MODIFIED="1559552770665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py" />
     <SUITE FILE_PATH="coverage/code$api_get.coverage" NAME="api_get Coverage Results" MODIFIED="1560853137656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monitor_zabbix/zabbix_api" />
     <SUITE FILE_PATH="coverage/code$zabbix_api_pycurl.coverage" NAME="zabbix_api_pycurl Coverage Results" MODIFIED="1560849954728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monitor_zabbix/zabbix_api" />
+    <SUITE FILE_PATH="coverage/code$new_api_module.coverage" NAME="new_api_module Coverage Results" MODIFIED="1561107855196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ansible_model/ansible_api_files" />
     <SUITE FILE_PATH="coverage/code$_test.coverage" NAME="装饰器_test Coverage Results" MODIFIED="1559487107765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py" />
     <SUITE FILE_PATH="coverage/code$weixn_api_monitor.coverage" NAME="weixn_api_monitor Coverage Results" MODIFIED="1560847662876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="装饰器_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py/装饰器_test.py">
+      <file leaf-file-name="js_管理菜单+模态对话框.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/14day_html_js/JavaScript_demo/js_管理菜单+模态对话框.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weixn_api_monitor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py/weixn_api_monitor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-984">
-              <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-              <folding>
-                <element signature="e#102#115#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zabbix_api_pycurl.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitor_zabbix/zabbix_api/zabbix_api_pycurl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-              <folding>
-                <element signature="e#163#176#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zabbix_api_get.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitor_zabbix/zabbix_api/zabbix_api_get.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2865">
-              <caret line="191" selection-start-line="191" selection-end-line="191" />
-              <folding>
-                <element signature="e#206#227#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="playbook.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ansible_model/tomcal/playbook.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vars.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ansible_model/tomcal/vars.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cpu_sh.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitor_zabbix/cpu_sh.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="75">
+              <caret line="190" column="11" lean-forward="true" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -112,6 +49,7 @@
       <find>$</find>
       <find>count_dict</find>
       <find>URL</find>
+      <find>variable_manager</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,6 +91,8 @@
         <option value="$PROJECT_DIR$/Ansible_model/tomcal/java.sh" />
         <option value="$PROJECT_DIR$/Ansible_model/tomcal/vars.yaml" />
         <option value="$PROJECT_DIR$/Ansible_model/tomcal/playbook.yaml" />
+        <option value="$PROJECT_DIR$/Ansible_model/ansible_api_files/new_api_modeul.py" />
+        <option value="$PROJECT_DIR$/Ansible_model/ansible_api_files/new_api_module.py" />
       </list>
     </option>
   </component>
@@ -249,8 +189,9 @@
       <path value="$PROJECT_DIR$/node-express/node_modules/xtend/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1645" />
+    <option name="y" value="140" />
     <option name="width" value="1440" />
     <option name="height" value="805" />
   </component>
@@ -262,7 +203,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,29 +213,19 @@
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Ansible_model" type="462c0819:PsiDirectoryNode" />
+              <item name="14day_html_js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="code" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="Ansible_model" type="462c0819:PsiDirectoryNode" />
-              <item name="tomcal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="monitor_zabbix" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="monitor_zabbix" type="462c0819:PsiDirectoryNode" />
-              <item name="zabbix_api" type="462c0819:PsiDirectoryNode" />
+              <item name="14day_html_js" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaScript_demo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,7 +257,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.api_get">
+  <component name="RunManager" selected="Python.new_api_module">
     <configuration name="demo_ansible.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/code/demo-app/ansible_demo/root_demo/templates/demo_ansible.html" />
     <configuration name="aa" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
@@ -367,7 +297,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="cpu_number" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="new_api_module" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -375,12 +305,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/py" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ansible_model/ansible_api_files" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py/cpu_number.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ansible_model/ansible_api_files/new_api_module.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -425,19 +355,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.cpu_number" />
       <item itemvalue="Python.aa" />
       <item itemvalue="Python.weixn_api_monitor" />
       <item itemvalue="Python.api_get" />
       <item itemvalue="Python.zabbix_api_pycurl" />
+      <item itemvalue="Python.new_api_module" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.new_api_module" />
         <item itemvalue="Python.api_get" />
         <item itemvalue="Python.zabbix_api_pycurl" />
         <item itemvalue="Python.weixn_api_monitor" />
         <item itemvalue="Python.aa" />
-        <item itemvalue="Python.cpu_number" />
       </list>
     </recent_temporary>
   </component>
@@ -455,17 +385,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="805" extended-state="6" />
+    <frame x="-1645" y="140" width="1440" height="805" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.123032905" side_tool="true" weight="0.23163842" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8769671" visible="true" weight="0.23163842" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8769671" weight="0.23163842" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.7668097" weight="0.22440393" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22818312" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23104435" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -493,10 +423,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/H+4.2正版源码/index_v3.html">
+    <entry file="file://$PROJECT_DIR$/Ansible_model/ansible_api_files/new_api_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="330">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#184#218#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -740,6 +673,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Ansible_model/ansible_demo/ansible_demo/demo_1/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py/ansible_ssh.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ansible_model/tomcal/java.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/py/装饰器_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -747,57 +697,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requires.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ansible_model/ansible_demo/ansible_file/touch_8.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ansible_model/ansible_demo/ansible_file/touch_7.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ansible_model/ansible_demo/ansible_demo/demo_1/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ansible_model/ansible_demo/ansible_demo/demo_1/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py/ansible_ssh.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#154#163#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitor_zabbix/cpu_sh.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitor_zabbix/zabbix_api/zabbix_api_get.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2865">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
-          <folding>
-            <element signature="e#206#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/py/weixn_api_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-984">
+        <state relative-caret-position="-516">
           <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
           <folding>
             <element signature="e#102#115#0" expanded="true" />
@@ -815,24 +717,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ansible_model/tomcal/java.sh">
+    <entry file="file://$PROJECT_DIR$/monitor_zabbix/zabbix_api/zabbix_api_get.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="631">
+          <caret line="191" selection-start-line="191" selection-end-line="191" />
+          <folding>
+            <element signature="e#206#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ansible_model/tomcal/playbook.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ansible_model/ansible_api_files/new_api_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#184#218#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ansible_model/tomcal/vars.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ansible_model/tomcal/playbook.yaml">
+    <entry file="file://$PROJECT_DIR$/monitor_zabbix/cpu_sh.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14day_html_js/JavaScript_demo/js_后台管理左侧菜单.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14day_html_js/JavaScript_demo/js_后台管理页面布局.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14day_html_js/JavaScript_demo/js_管理菜单+模态对话框.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="190" column="11" lean-forward="true" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="11" />
         </state>
       </provider>
     </entry>
