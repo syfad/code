@@ -1,12 +1,12 @@
 # Exposing rich exception information from callbacks example
 
-import pycurl, random, socket
+import pycurl, random_num, socket
 
 class ConnectionRejected(Exception):
     pass
 
 def opensocket(curl, purpose, curl_address):
-    if random.random() < 0.5:
+    if random_num.random_num() < 0.5:
         curl.exception = ConnectionRejected('Rejecting connection attempt in opensocket callback')
         return pycurl.SOCKET_BAD
     
