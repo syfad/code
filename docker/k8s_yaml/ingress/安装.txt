@@ -1,0 +1,4 @@
+#删除api配置文件--enable-admission-plugins，删除SecurityContextDeny项，不然报错
+
+#eplicaset-controller  Error creating: pods "nginx-ingress-controller-86449c74bb-92dhl"
+is forbidden: SecurityContext.RunAsUser is forbidden

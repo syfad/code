@@ -5,16 +5,26 @@ openssl genrsa -out server.key 2048
 openssl req -new -key server.key -subj "/CN=kubernetes" -config master_ssl.cnf -out server.csr
 openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 5000 -extensions v3_req -extfile master_ssl.cnf -out server.crt
 
+#kube-apiserver配置文件
+KUBE_API_CLIENT_CA_FILE="--client-ca-file=/dmdata/server/kubernetes/master_ssl/ca.crt"
+KUBE_API_TLS_CERT_FILE="--tls-cert-file=/dmdata/server/kubernetes/master_ssl/server.crt"
+KUBE_API_TLS_PRIVATE_KEY_FILE="--tls-private-key-file=/dmdata/server/kubernetes/master_ssl/server.key"
+
+
 #生成kube-controller-manager证书文件
 openssl genrsa -out cs_client.key 2048
 openssl req -new -key cs_client.key -subj "/CN=kubernetes" -out cs_client.csr
 openssl x509 -req -in cs_client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out cs_client.crt -days 5000
 创建kubeconfig文件，当前目录
 
+#kube-controller-manager配置文件
+SERVICE_ACCOUNT_KEY_FILE="--service-account-private-key-file=/dmdata/server/kubernetes/master_ssl/server.key"
+ROOT_CA_FILE="--root-ca-file=/dmdata/server/kubernetes/master_ssl/ca.crt"
+KUBECONFIG="--kubeconfig=/opt/kubernetes/cfg/kubeconfig"
 
 
 
-将client.csr 和ca.crt拷贝到node-203机器上
+将client.csr 和ca.crt拷贝到node-203和204机器上，分别生成文件
 openssl genrsa -out kubelet_client.key 2048
 openssl req -new -key kubelet_client.key -subj "/CN=192.168.100.203" -out kubelet_client.csr
 openssl x509 -req -in kubelet_client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out kubelet_client.crt -days 5000
@@ -22,3 +32,6 @@ openssl x509 -req -in kubelet_client.csr -CA ca.crt -CAkey ca.key -CAcreateseria
 
 将IP改为204
 openssl req -new -key kubelet_client.key -subj "/CN=192.168.100.204" -out kubelet_client.csr
+
+#kubelet 和kube-proxy配置文件添加
+KUBELET_ARGS="--kubeconfig=/opt/kubernetes/cfg/kubeconfig"

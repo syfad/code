@@ -10,9 +10,9 @@ spec:
       - backend:
           serviceName: httpd
           servicePort: 80
-  - host: api.here.cn
-    http:
-      paths:
-      - backend:
-          serviceName: nginx
-          servicePort: 80
+#  - host: api.here.cn
+#    http:
+#      paths:
+#      - backend:
+#          serviceName: nginx
+#          servicePort: 80
