@@ -27,3 +27,11 @@ def bin_search(data_set, value):
         else:
             low = mid + 1
     return
+
+
+list1 = [0,3,2,10,99,33,88]
+max = list1[0]
+for i in list1:
+    if i > max:
+        max =i
+print(max)
