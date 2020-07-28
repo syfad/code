@@ -1,9 +1,45 @@
 #kube-apiserver生成证书文件
+ #生成RSA私钥(无加密)
 openssl genrsa -out ca.key 2048
+ #生成RSA私钥(无加密)
 openssl req -x509 -new -nodes -key ca.key -subj "/CN=kubernetes" -days 5000 -out ca.crt
-openssl genrsa -out server.key 2048
+
+#生成apiserver 证书对
+openssl genrsa -out server.key 2049
 openssl req -new -key server.key -subj "/CN=kubernetes" -config master_ssl.cnf -out server.csr
 openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 5000 -extensions v3_req -extfile master_ssl.cnf -out server.crt
+
+# 参数说明：
+#-new 指生成证书请求
+#-x509 表示直接输出证书
+#-key 指定私钥文件
+#-days 指定证书过期时间为10000天
+#-out 导出结束后证书文件
+#-subj 输入证书拥有者信息，这里指定 CN 以及 O 的值
+
+# 重要的CN以及0关键参数：
+#-subj 设置CN以及0的值很重要，kubernetes会从证书这两个值对应获取相关的用户名以及用户租的值，如下：
+#"CN"：Common Name，kube-apiserver 从证书中提取该字段作为请求的用户名 (User Name)；浏览器使用该字段验证网站是否合法；
+#"O"：Organization，kube-apiserver 从证书中提取该字段作为请求用户所属的组 (Group)；
+
+vim master_ssl.cnf
+[req]
+req_extensions = v3_req
+distinguished_name = req_distinguished_name
+[req_distinguished_name]
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = docker01
+DNS.2 = docker01.default
+DNS.3 = docker01.default.svc
+DNS.4 = docker01.default.svc.cluster.local
+DNS.5 = docker01
+IP.1 = 172.30.0.1
+IP.2 = 10.130.85.127
+
 
 #kube-apiserver配置文件
 KUBE_API_CLIENT_CA_FILE="--client-ca-file=/dmdata/server/kubernetes/master_ssl/ca.crt"

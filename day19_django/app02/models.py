@@ -25,5 +25,5 @@ class Host(models.Model):
     hostname = models.CharField(max_length=32,db_index=True)
     ip = models.GenericIPAddressField(db_index=True)
     port = models.IntegerField()
-    b = models.ForeignKey(to="Business", to_field='id')#外键关联到Business表
+    b = models.ForeignKey(to="Business", to_field='id', on_delete=1)#外键关联到Business表
 

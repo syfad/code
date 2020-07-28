@@ -156,7 +156,7 @@ class home(View):
         return render(request, 'home.html')
 
     def post(self,request):
-        print request.method, 'post'
+        print (request.method, 'post')
         return render(request, 'home.html')
 
 
