@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .item .header {
+            background-color: #0a6aa1;
+            height: 35px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="height: 48px"></div>
+<div style="width: 300px">
+<!--<div style="width: 300px" id="i0">-->
+
+    <div class="item">
+        <div id="i1" class="header" onclick="changeMenu('i1');">菜单一</div>
+        <div class="content">
+            <div>内容1</div>
+            <div>内容1</div>
+            <div>内容1</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div id="i2" class="header" onclick="changeMenu('i2');">菜单2</div>
+        <div class="content hide">
+            <div>内容2</div>
+            <div>内容2</div>
+            <div>内容2</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div id="i3" class="header" onclick="changeMenu('i3');">菜单3</div>
+        <div class="content hide">
+            <div>内容3</div>
+            <div>内容3</div>
+            <div>内容3</div>
+        </div>
+    </div>
+</div>
+
+</body>
+    <script>
+        function changeMenu(nid) {
+            var current_header = document.getElementById(nid);
+            var item_list = current_header.parentElement.parentElement.children;
+
+            //另外一种写法：从父节点往下取，取div=i0
+            // var item_list1 = document.getElementById('i0').querySelectorAll(".content")
+
+            for (var i = 0; i < item_list.length; i++) {
+                var current_item = item_list[i];
+                // console.log(current_item.children[1])
+                current_item.children[1].classList.add('hide');
+
+            }
+            current_header.nextElementSibling.classList.remove('hide');
+
+            //循环直接取值到content
+            // for (var i = 0; i < item_list1.length; i++) {
+            //     item_list1[i].classList.add('hide');
+            //     //console.log(item_list1[i])
+            // }
+            // current_header.nextElementSibling.classList.remove('hide');
+
+        }
+    </script>
+</html>
+
+
+
+
+
+

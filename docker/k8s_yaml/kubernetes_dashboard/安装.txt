@@ -1,0 +1,4 @@
+#登录方式选择token，获得token命令
+kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep kubernetes-dashboard | awk '{print $1}')
+
+#更改type为NodePort,可以更改nodePort: 30000为指定端口

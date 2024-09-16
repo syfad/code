@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="反选" onclick="reverseAll()">
+<input type="button" value="取消" onclick="cancelAll()">
+
+<table border="1px">
+    <thead>
+    <tr>
+        <th><input type="button" value="全选" onclick="chooseAll()"></th>
+        <th>名称</th>
+        <th>用户名</th>
+        <th>用户组</th>
+        <th>动作</th>
+    </tr>
+
+    </thead>
+
+    <tbody id="tb1">
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>admin</td>
+        <td>管理员</td>
+        <td>User</td>
+        <td><input type="button" value="编辑" onclick="ShowModel()"></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>张三</td>
+        <td>zhangsan</td>
+        <td>User</td>
+        <td><input type="button" value="编辑" onclick="ShowModel()"></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>李四</td>
+        <td>lisi</td>
+        <td>User</td>
+        <td><input type="button" value="编辑" onclick="ShowModel()"></td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous">
+</script>
+
+<script>
+    function chooseAll(){
+        // $("input[type='checkbox']") 都可以实现
+        $('#tb1, :checkbox').prop('checked', true)
+    }
+
+    function cancelAll() {
+        $("#tb1, input[type='checkbox']").prop('checked', false)
+    }
+    
+    function reverseAll() {
+        $('#tb1, :checkbox').each(function () {
+            //this;代指当前循环的每一个元素
+            //反选
+            if(this.checked){
+                this.checked = false;
+            }else {
+                this.checked = true;
+            }
+            // console.log(this);
+        })
+
+
+    }
+
+</script>
+
+</html>
